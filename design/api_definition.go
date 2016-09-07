@@ -8,8 +8,8 @@ import (
 // This is the XAPI_NAME application API design used by goa to generate
 // the application code, client, tests, documentation etc.
 var _ = API("XAPI_NAME", func() {
-	Title("XAPI_TITLE")
-	Description("XAPI_DESC")
+	Title("XAPI_NAME title")
+	Description("XAPI_NAME description")
 	Contact(func() {
 		Name("moeboe team")
 		Email("chuck@moeboe.io")
@@ -19,4 +19,13 @@ var _ = API("XAPI_NAME", func() {
 	Scheme("http")
 	BasePath("/XAPI_NAME")
 
+	ResponseTemplate(Created, func(pattern string) {
+		Description("Resource created")
+		Status(201)
+		Headers(func() {
+			Header("Location", String, "href to created resource", func() {
+				Pattern(pattern)
+			})
+		})
+	})
 })
