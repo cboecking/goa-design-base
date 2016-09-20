@@ -22,6 +22,11 @@ XRESOURCE_L=${MOEBOE_PROP_GOA_RESOURCE_NAME,,}
 XRESOURCE_U=${XRESOURCE_L^}
 XMEDIATYPE_L=${MOEBOE_PROP_GOA_MEDIA_TYPE_NAME,,}
 XMEDIATYPE_U=${XMEDIATYPE_L^}
+XSTORGROUP_L=${MOEBOE_PROP_GORMA_STORAGE_GROUP,,}
+XMEDIATYPE_U=${XSTORGROUP_L^}
+XSTORMODEL_L=${MOEBOE_PROP_GORMA_STORAGE_MODEL,,}
+XSTORMODEL_U=${XSTORMODEL_L^}
+
 
 #set global replace text
 sudo sed -i "s|XAPI_NAME|$XAPI_NAME|g" $GOA_DESIGN_DEST/api_definition.go
@@ -32,12 +37,19 @@ sudo sed -i "s|XRESOURCE_U|$XRESOURCE_U|g" $GOA_DESIGN_DEST/resources.go
 sudo sed -i "s|XMEDIATYPE_L|$XMEDIATYPE_L|g" $GOA_DESIGN_DEST/media_types.go
 sudo sed -i "s|XMEDIATYPE_U|$XMEDIATYPE_U|g" $GOA_DESIGN_DEST/media_types.go
 
+sudo sed -i "s|XSTORGROUP_L|$XSTORGROUP_L|g" $GOA_DESIGN_DEST/models.go
+sudo sed -i "s|XSTORGROUP_U|$XSTORGROUP_U|g" $GOA_DESIGN_DEST/models.go
+
+sudo sed -i "s|XSTORMODEL_L|$XSTORMODEL_L|g" $GOA_DESIGN_DEST/models.go
+sudo sed -i "s|XSTORMODEL_U|$XSTORMODEL_U|g" $GOA_DESIGN_DEST/models.go
+
 echo "***************************"
 echo "** Success"
 echo "** Perform the following commands to create, build and start your application"
 echo "** 1) cd $GOA_DESIGN_DEST_BASE"
 echo "** 2) goagen bootstrap -d $MOEBOE_PROP_YOUR_REPO_NAME/$MOEBOE_PROP_YOUR_GIT_USER_NAME/$MOEBOE_PROP_GOA_PACKAGE_NAME/design"
-echo "** 3) go build ."
-echo "** 4) ./$MOEBOE_PROP_GOA_PACKAGE_NAME"
-echo "** 5) issue this command from another shell: http http://localhost:8081/$XAPI_NAME/${XRESOURCE_L}s"
+echo "** 4) goagen --design=$MOEBOE_PROP_YOUR_REPO_NAME/$MOEBOE_PROP_YOUR_GIT_USER_NAME/$MOEBOE_PROP_GOA_PACKAGE_NAME/design/ gen --pkg-path=github.com/goadesign/gorma"
+echo "** 5) go build ."
+echo "** 6) ./$MOEBOE_PROP_GOA_PACKAGE_NAME"
+echo "** 7) issue this command from another shell: http http://localhost:8081/$XAPI_NAME/${XRESOURCE_L}s"
 echo "***************************"
