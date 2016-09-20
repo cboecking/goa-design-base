@@ -1,7 +1,7 @@
 package design
 
 import (
-	XSTORMODEL_U "XPATHDESIGN"
+	XSTORMODEL_L "XPATHDESIGN"
 	"github.com/goadesign/gorma"
 	. "github.com/goadesign/gorma/dsl"
 )
