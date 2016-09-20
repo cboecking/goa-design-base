@@ -3,8 +3,11 @@
 source $GOPATH/src/github.com/cboecking/goa-design-base/util/moeboe.properties
 
 GOA_DESIGN_SOURCE=$GOPATH/src/github.com/cboecking/goa-design-base/design/
-GOA_DESIGN_DEST_BASE=$GOPATH/src/$MOEBOE_PROP_YOUR_REPO_NAME/$MOEBOE_PROP_YOUR_GIT_USER_NAME/$MOEBOE_PROP_GOA_PACKAGE_NAME/
-GOA_DESIGN_DEST=$GOA_DESIGN_DEST_BASE/design
+GOA_DESIGN_DEST_BASE_REL=$MOEBOE_PROP_YOUR_REPO_NAME/$MOEBOE_PROP_YOUR_GIT_USER_NAME/$MOEBOE_PROP_GOA_PACKAGE_NAME/
+GOA_DESIGN_DEST_REL=$GOA_DESIGN_DEST_BASE_REL/design/
+GOA_DESIGN_DEST_BASE=$GOPATH/src/$GOA_DESIGN_DEST_BASE_REL/
+GOA_DESIGN_DEST=$GOA_DESIGN_DEST_BASE/design/
+
 
 #Action - check if GOA_DESIGN_DEST already exists, if so - exit
 RESULT=$([ -d $GOA_DESIGN_DEST ] && echo "Y" || echo "N")
@@ -42,13 +45,14 @@ sudo sed -i "s|XSTORGROUP_U|$XSTORGROUP_U|g" $GOA_DESIGN_DEST/models.go
 
 sudo sed -i "s|XSTORMODEL_L|$XSTORMODEL_L|g" $GOA_DESIGN_DEST/models.go
 sudo sed -i "s|XSTORMODEL_U|$XSTORMODEL_U|g" $GOA_DESIGN_DEST/models.go
+sudo sed -i "s|XPATHDESIGN|$GOA_DESIGN_DEST_REL|g" $GOA_DESIGN_DEST/models.go
 
 echo "***************************"
 echo "** Success"
 echo "** Perform the following commands to create, build and start your application"
 echo "** 1) cd $GOA_DESIGN_DEST_BASE"
-echo "** 2) goagen bootstrap -d $MOEBOE_PROP_YOUR_REPO_NAME/$MOEBOE_PROP_YOUR_GIT_USER_NAME/$MOEBOE_PROP_GOA_PACKAGE_NAME/design"
-echo "** 4) goagen --design=$MOEBOE_PROP_YOUR_REPO_NAME/$MOEBOE_PROP_YOUR_GIT_USER_NAME/$MOEBOE_PROP_GOA_PACKAGE_NAME/design/ gen --pkg-path=github.com/goadesign/gorma"
+echo "** 2) goagen bootstrap -d $GOA_DESIGN_DEST_REL"
+echo "** 4) goagen --design=$GOA_DESIGN_DEST_REL gen --pkg-path=github.com/goadesign/gorma"
 echo "** 5) go build ."
 echo "** 6) ./$MOEBOE_PROP_GOA_PACKAGE_NAME"
 echo "** 7) issue this command from another shell: http http://localhost:8081/$XAPI_NAME/${XRESOURCE_L}s"
