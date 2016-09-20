@@ -45,7 +45,6 @@ sudo sed -i "s|XSTORGROUP_U|$XSTORGROUP_U|g" $GOA_DESIGN_DEST/models.go
 
 sudo sed -i "s|XSTORMODEL_L|$XSTORMODEL_L|g" $GOA_DESIGN_DEST/models.go
 sudo sed -i "s|XSTORMODEL_U|$XSTORMODEL_U|g" $GOA_DESIGN_DEST/models.go
-sudo sed -i "s|XPATHDESIGN|$GOA_DESIGN_DEST_REL|g" $GOA_DESIGN_DEST/models.go
 
 echo "***************************"
 echo "** Success"
