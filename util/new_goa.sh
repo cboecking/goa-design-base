@@ -32,19 +32,19 @@ XSTORMODEL_U=${XSTORMODEL_L^}
 
 
 #set global replace text
-sudo sed -i "s|XAPI_NAME|$XAPI_NAME|g" $GOA_DESIGN_DEST/api_definition.go
+sed -i "s|XAPI_NAME|$XAPI_NAME|g" $GOA_DESIGN_DEST/api_definition.go
 
-sudo sed -i "s|XRESOURCE_L|$XRESOURCE_L|g" $GOA_DESIGN_DEST/resources.go
-sudo sed -i "s|XRESOURCE_U|$XRESOURCE_U|g" $GOA_DESIGN_DEST/resources.go
+sed -i "s|XRESOURCE_L|$XRESOURCE_L|g" $GOA_DESIGN_DEST/resources.go
+sed -i "s|XRESOURCE_U|$XRESOURCE_U|g" $GOA_DESIGN_DEST/resources.go
 
-sudo sed -i "s|XMEDIATYPE_L|$XMEDIATYPE_L|g" $GOA_DESIGN_DEST/media_types.go
-sudo sed -i "s|XMEDIATYPE_U|$XMEDIATYPE_U|g" $GOA_DESIGN_DEST/media_types.go
+sed -i "s|XMEDIATYPE_L|$XMEDIATYPE_L|g" $GOA_DESIGN_DEST/media_types.go
+sed -i "s|XMEDIATYPE_U|$XMEDIATYPE_U|g" $GOA_DESIGN_DEST/media_types.go
 
-sudo sed -i "s|XSTORGROUP_L|$XSTORGROUP_L|g" $GOA_DESIGN_DEST/models.go
-sudo sed -i "s|XSTORGROUP_U|$XSTORGROUP_U|g" $GOA_DESIGN_DEST/models.go
+sed -i "s|XSTORGROUP_L|$XSTORGROUP_L|g" $GOA_DESIGN_DEST/models.go
+sed -i "s|XSTORGROUP_U|$XSTORGROUP_U|g" $GOA_DESIGN_DEST/models.go
 
-sudo sed -i "s|XSTORMODEL_L|$XSTORMODEL_L|g" $GOA_DESIGN_DEST/models.go
-sudo sed -i "s|XSTORMODEL_U|$XSTORMODEL_U|g" $GOA_DESIGN_DEST/models.go
+sed -i "s|XSTORMODEL_L|$XSTORMODEL_L|g" $GOA_DESIGN_DEST/models.go
+sed -i "s|XSTORMODEL_U|$XSTORMODEL_U|g" $GOA_DESIGN_DEST/models.go
 
 echo "***************************"
 echo "** Success"
