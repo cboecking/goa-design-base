@@ -34,6 +34,7 @@ XSTORMODEL_U=${XSTORMODEL_L^}
 
 #set global replace text
 sed -i "s|XAPI_NAME|$XAPI_NAME|g" $GOA_DESIGN_DEST/api_definition.go
+sed -i "s|XAPI_PORT|$XAPI_PORT|g" $GOA_DESIGN_DEST/api_definition.go
 
 sed -i "s|XRESOURCE_L|$XRESOURCE_L|g" $GOA_DESIGN_DEST/resources.go
 sed -i "s|XRESOURCE_U|$XRESOURCE_U|g" $GOA_DESIGN_DEST/resources.go
