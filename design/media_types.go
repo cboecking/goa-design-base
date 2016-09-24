@@ -5,21 +5,21 @@ import (
 	. "github.com/goadesign/goa/design/apidsl"
 )
 
-// XMEDIATYPE_U is the XMEDIATYPE_L resource media type.
-var XMEDIATYPE_U = MediaType("application/vnd.XMEDIATYPE_L+json", func() {
-	Description("A XMEDIATYPE_L")
+// MOEBOE_PROP_GOA_MEDIA_TYPE_NAME is the MOEBOE_PROP_GOA_RESOURCE_NAME resource media type.
+var MOEBOE_PROP_GOA_MEDIA_TYPE_NAME = MediaType("application/vnd.MOEBOE_PROP_GOA_RESOURCE_NAME+json", func() {
+	Description("A MOEBOE_PROP_GOA_MEDIA_TYPE_NAME")
 	Attributes(func() {
-		Attribute("id", Integer, "ID of XMEDIATYPE_L", func() {
+		Attribute("id", Integer, "ID of MOEBOE_PROP_GOA_RESOURCE_NAME", func() {
 			Example(1)
 		})
-		Attribute("href", String, "API href of XMEDIATYPE_L", func() {
-			Example("/XMEDIATYPE_Ls/1")
+		Attribute("href", String, "API href of MOEBOE_PROP_GOA_RESOURCE_NAME", func() {
+			Example("/MOEBOE_PROP_GOA_RESOURCE_NAME/1")
 		})
-		Attribute("name", String, "Name of XMEDIATYPE_U", func() {
+		Attribute("name", String, "Name of MOEBOE_PROP_GOA_RESOURCE_NAME", func() {
 			Example("test")
 		})
 		Attribute("created_at", DateTime, "Date of creation")
-		Attribute("created_by", String, "Email of XMEDIATYPE_L owner", func() {
+		Attribute("created_by", String, "Email of MOEBOE_PROP_GOA_RESOURCE_NAME owner", func() {
 			Format("email")
 			Example("me@moeboe.io")
 		})

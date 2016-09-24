@@ -5,26 +5,26 @@ import (
 	. "github.com/goadesign/goa/design/apidsl"
 )
 
-var _ = Resource("XRESOURCE_L", func() {
+var _ = Resource("MOEBOE_PROP_GOA_RESOURCE_NAME", func() {
 
-	DefaultMedia(XRESOURCE_U)
-	BasePath("/XRESOURCE_Ls")
+	DefaultMedia(MOEBOE_PROP_GOA_MEDIA_TYPE_NAME)
+	BasePath("/MOEBOE_PROP_GOA_RESOURCE_NAMEs")
 
 	Action("list", func() {
 		Routing(
 			GET(""),
 		)
-		Description("Retrieve all XRESOURCE_Ls.")
-		Response(OK, CollectionOf(XRESOURCE_U))
+		Description("Retrieve all MOEBOE_PROP_GOA_RESOURCE_NAMEs.")
+		Response(OK, CollectionOf(MOEBOE_PROP_GOA_MEDIA_TYPE_NAME))
 	})
 
 	Action("show", func() {
 		Routing(
-			GET("/:XRESOURCE_LID"),
+			GET("/:MOEBOE_PROP_GOA_RESOURCE_NAMEID"),
 		)
-		Description("Retrieve XRESOURCE_L with given id.")
+		Description("Retrieve MOEBOE_PROP_GOA_RESOURCE_NAME with given id.")
 		Params(func() {
-			Param("XRESOURCE_LID", Integer, "XRESOURCE_U ID", func() {
+			Param("MOEBOE_PROP_GOA_RESOURCE_NAMEID", Integer, "MOEBOE_PROP_GOA_RESOURCE_NAME ID", func() {
 				Minimum(1)
 			})
 		})
@@ -37,22 +37,22 @@ var _ = Resource("XRESOURCE_L", func() {
 		Routing(
 			POST(""),
 		)
-		Description("Create new XRESOURCE_L")
+		Description("Create new MOEBOE_PROP_GOA_RESOURCE_NAME")
 		Payload(func() {
 			Member("name")
 			Required("name")
 		})
-		Response(Created, "/XRESOURCE_Ls/[0-9]+")
+		Response(Created, "/MOEBOE_PROP_GOA_RESOURCE_NAMEs/[0-9]+")
 		Response(BadRequest, ErrorMedia)
 	})
 
 	Action("update", func() {
 		Routing(
-			PUT("/:XRESOURCE_LID"),
+			PUT("/:MOEBOE_PROP_GOA_RESOURCE_NAMEID"),
 		)
-		Description("Change XRESOURCE_L name")
+		Description("Change MOEBOE_PROP_GOA_RESOURCE_NAME name")
 		Params(func() {
-			Param("XRESOURCE_LID", Integer, "XRESOURCE_U ID")
+			Param("MOEBOE_PROP_GOA_RESOURCE_NAMEID", Integer, "MOEBOE_PROP_GOA_RESOURCE_NAME ID")
 		})
 		Payload(func() {
 			Member("name")
@@ -65,10 +65,10 @@ var _ = Resource("XRESOURCE_L", func() {
 
 	Action("delete", func() {
 		Routing(
-			DELETE("/:XRESOURCE_LID"),
+			DELETE("/:MOEBOE_PROP_GOA_RESOURCE_NAMEID"),
 		)
 		Params(func() {
-			Param("XRESOURCE_LID", Integer, "XRESOURCE_U ID")
+			Param("MOEBOE_PROP_GOA_RESOURCE_NAMEID", Integer, "MOEBOE_PROP_GOA_RESOURCE_NAME ID")
 		})
 		Response(NoContent)
 		Response(NotFound)
