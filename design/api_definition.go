@@ -15,7 +15,7 @@ var _ = API("XAPI_NAME", func() {
 		Email("chuck@moeboe.io")
 		URL("http://moeboe.io")
 	})
-	Host("localhost:8081")
+	Host("localhost:XAPI_PORT")
 	Scheme("http")
 	BasePath("/XAPI_NAME")
 
