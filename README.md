@@ -16,4 +16,4 @@ The purpose of this repository is to seed a new goa and gorma design folder.
 4) Update your controller (ex: account.go) to update the database based on the routing actions: see the [Sample Goa Project](https://github.com/cboecking/gorma-sample)
 
 ### Feedback
-I hope this helps! Let me know if you have feedback @ chuck@chuboe.com.
+I hope this helps! Let me know if you have feedback: chuck@chuboe.com.
