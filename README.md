@@ -11,7 +11,7 @@ The purpose of this repository is to seed a new goa and gorma design folder.
 ### Steps to make your project work
 
 1. Follow the directions from ./new_goa.sh to test the seeded project
-2. Install a postgresql instance with the appropriate credentials. [Here is a docker command if you docker installed.](https://github.com/goadesign/gorma-cellar/blob/master/docker.sh)
+2. Install a postgresql instance with the appropriate credentials. [Here is a docker command if you have docker installed.](https://github.com/goadesign/gorma-cellar/blob/master/docker.sh)
 3. Update main.go with your database information: see the [Sample Goa Project](https://github.com/cboecking/gorma-sample)
 4. Update your controller (ex: account.go) to update the database based on the routing actions: see the [Sample Goa Project](https://github.com/cboecking/gorma-sample)
 
