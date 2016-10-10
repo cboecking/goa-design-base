@@ -16,6 +16,7 @@ var _ = StorageGroup("MOEBOE_PROP_GORMA_STORAGE_GROUP", func() {
 				PrimaryKey()
 			})
 			Field("name", gorma.String)
+			Field("created_by", gorma.String)
 		})
 
 	})
